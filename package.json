@@ -1,0 +1,28 @@
+{
+  "name": "wdid",
+  "version": "0.1.0",
+  "description": "CLI program that stores and records your daily stand-ups",
+  "main": "bin/index.js",
+  "bin": {
+    "wdid": "bin/index.js"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "TBD"
+  },
+  "keywords": [
+    "cli",
+    "standup",
+    "store",
+    "record",
+    "track"
+  ],
+  "engines": {
+    "node": ">= 18"
+  },
+  "author": "Ondřej Synáček <ondrej@synacek.org>",
+  "license": "GPL-3.0-or-later"
+}
