@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-const { help } = require('../lib')
+const { constructParser } = require('../lib')
 
-help()
+const arguments = constructParser(process.argv)
+console.log(Object.keys(arguments))
