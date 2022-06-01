@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-const { constructParser } = require('../lib')
+import { constructParser } from '../lib/index.mjs'
 
-const arguments = constructParser(process.argv)
-console.log(Object.keys(arguments))
+constructParser(process.argv)
