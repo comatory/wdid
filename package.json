@@ -30,6 +30,7 @@
     "inquirer": "^8.2.4",
     "sqlite": "^4.1.1",
     "sqlite3": "^5.0.8",
+    "xdg-app-paths": "^7.3.0",
     "yargs": "^17.5.1"
   }
 }
