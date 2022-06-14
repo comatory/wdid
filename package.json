@@ -5,7 +5,8 @@
   "description": "CLI program that stores and records your daily stand-ups",
   "main": "bin/index.js",
   "bin": {
-    "wdid": "bin/index.js"
+    "wdid": "bin/index.js",
+    "wdid-notify": "bin/notification.js"
   },
   "scripts": {
     "test": "test"
@@ -29,6 +30,7 @@
   "dependencies": {
     "chalk": "^5.0.1",
     "inquirer": "^8.2.4",
+    "node-notifier": "^10.0.1",
     "sqlite": "^4.1.1",
     "sqlite3": "^5.0.8",
     "xdg-app-paths": "^7.3.0",
