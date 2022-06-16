@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wdid</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      font-size: 16px;
+    }
+
+    p {
+      line-height: 1.4rem;
+    }
+
+    hr {
+        width: 100%;
+    }
+
+    .header, .title-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .title-wrapper {
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+
+    .title-wrapper__sub-title {
+      font-size: 3rem;
+      font-style: italic;
+    }
+
+    .content {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .content__intro {
+      display: block;
+      width: 100%;
+    }
+
+    .content__subtitle {
+      text-align: center;
+      font-size: 1.8rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="logo.svg" alt="logo" />
+  </div>
+  <div class="title-wrapper">
+    <h1 class="title-wrapper__sub-title">
+      »<strong>W</strong>hat <strong>d</strong>id <strong>I</strong> <strong>do</strong>?«
+    </h1>
+  </div>
+  <main class="content">
+    <img
+      class="content__intro"
+      src="wdid.gif"
+      alt="wdid on command-line"
+    />
+    <p>
+      <code>wdid</code> is a command-line tool that can help you remember what you worked on during the day.
+      It should be used within workplace where daily SCRUM stand-ups are used. This tool can generate such a stand-up and much more.
+    </p>
+    <hr />
+    <h3 class="content__subtitle">Why?</h3>
+    <p>
+      I created this tool for myself because I often could not recall what I did previous day during stand-up meeting. Sometimes it'd be hard for me to exactly remember what I was planning to do.
+    </p>
+    <p>
+      With <code>wdid</code> I can create an entry before the meeting. This tool asks series of pre-defined questions that are typical for stand-ups.
+      During the meeting I can simply recall the latest stand-up entry I created and report to team on my plan for the day.
+    </p>
+    <p>
+      <code>wdid</code> stores these stand-ups in a single sqlite database file so I can always list the data I entered which is ordere chronologically. It is also simple to move the data between machines.
+    </p>
+    <h3 class="content__subtitle">How does it work?</h3>
+    <em>TBD</em>
+  </main>
+</body>
+</html>
