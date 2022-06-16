@@ -1,6 +1,6 @@
 {
   "name": "wdid",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "type": "module",
   "description": "CLI program that stores and records your daily stand-ups",
   "main": "bin/index.js",
@@ -15,7 +15,7 @@
     "type": "git",
     "url": "https://github.com/comatory/wdid"
   },
-  "homepage": "https://github.com/comatory/wdid",
+  "homepage": "https://comatory.github.io/wdid/",
   "keywords": [
     "cli",
     "standup",
