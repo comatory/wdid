@@ -1,4 +1,4 @@
-<img src="docs/logo.svg" alt="wdid logo" />
+![wdid logo](docs/logo.svg)
 
 # wdid
 
@@ -7,7 +7,7 @@ recording your daily SCRUM stand-ups.
 
 See [website](/) for more detailed explanation
 
-<video controls src="docs/wdid-intro.mp4" width="481" preload="auto" />
+<img src="docs/wdid.gif" width="481" alt="demonstrating wdid on command line" />
 
 ## Why?
 
