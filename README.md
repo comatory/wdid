@@ -26,7 +26,7 @@ The entries are stored in sqlite database file.
 
 ### NPM
 
-_TBD_
+`npm i -G wdid`
 
 ### Git repository
 

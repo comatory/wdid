@@ -13,8 +13,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "TBD"
+    "url": "https://github.com/comatory/wdid"
   },
+  "homepage": "https://github.com/comatory/wdid",
   "keywords": [
     "cli",
     "standup",
