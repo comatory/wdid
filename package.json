@@ -1,6 +1,6 @@
 {
   "name": "wdid",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "type": "module",
   "description": "CLI program that stores and records your daily stand-ups",
   "main": "bin/index.js",
