@@ -25,7 +25,7 @@ yargs(hideBin(process.argv))
   )
   .command(
     'remind',
-    'create reminder for tomorrow\'s stand-up',
+    'create reminder for next working day\'s stand-up',
     (y) => y
       .option('amend', {
         alias: 'a',
