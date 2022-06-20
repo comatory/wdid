@@ -21,6 +21,16 @@
         width: 100%;
     }
 
+    figure > figcaption {
+      font-size: 0.85rem;
+      margin: 10px;
+      text-align: center;
+    }
+
+    ul > li, ol > li {
+      line-height: 1.5rem;
+    }
+
     .header, .title-wrapper {
       display: flex;
       align-items: center;
@@ -42,7 +52,7 @@
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
-      max-width: 720px;
+      max-width: 800px;
       margin: 0 auto;
     }
 
@@ -54,6 +64,29 @@
     .content__subtitle {
       text-align: center;
       font-size: 1.8rem;
+    }
+
+    .content-nav {
+      font-size: 0.9rem;
+      font-weight: 600;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-evenly;
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .content-nav__item {
+      padding: 2px 6px;
+    }
+
+    .authors {
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   </style>
 </head>
@@ -76,10 +109,29 @@
       <code>wdid</code> is a command-line tool that can help you remember what you worked on during the day.
       It should be used within workplace where daily SCRUM stand-ups are used. This tool can generate such a stand-up and much more.
     </p>
+    <nav>
+      <ul class="content-nav">
+        <li class="content-nav__item"><a href="#why">Why?</a></li>
+        <li role="presentation">•</li>
+        <li class="content-nav__item"><a href="#how-does-it-work">How does it work?</a></li>
+        <li role="presentation">•</li>
+        <li class="content-nav__item"><a href="#installation">Installation</a></li>
+        <li role="presentation">•</li>
+        <li class="content-nav__item"><a href="#usage">Usage</a></li>
+        <li role="presentation">•</li>
+        <li class="content-nav__item"><a href="#customization">Customization</a></li>
+        <li role="presentation">•</li>
+        <li class="content-nav__item"><a href="#notifications">Notifications</a></li>
+        <li role="presentation">•</li>
+        <li class="content-nav__item"><a href="https://github.com/comatory/wdid">Github</a></li>
+        <li role="presentation">•</li>
+        <li class="content-nav__item"><a href="https://github.com/comatory/wdid/issues">Report issues</a></li>
+      </ul>
+    </nav>
     <hr />
-    <h3 class="content__subtitle">Why?</h3>
+    <h3 class="content__subtitle" id="why">Why?</h3>
     <p>
-      I created this tool for myself because I often could not recall what I did previous day during stand-up meeting. Sometimes it'd be hard for me to exactly remember what I was planning to do.
+      I created this tool for myself because I often could not recall what I did previous day during stand-up meeting. Sometimes it'd be hard for me to exactly remember what I was planning to do. This also means the program is very opinionated and it's not intended to be used as general purpose note taking tool.
     </p>
     <p>
       With <code>wdid</code> I can create an entry before the meeting. This tool asks series of pre-defined questions that are typical for stand-ups.
@@ -88,8 +140,92 @@
     <p>
       <code>wdid</code> stores these stand-ups in a single sqlite database file so I can always list the data I entered which is ordere chronologically. It is also simple to move the data between machines.
     </p>
-    <h3 class="content__subtitle">How does it work?</h3>
-    <em>TBD</em>
+    <h3 class="content__subtitle" id="how-does-it-work">How does it work?</h3>
+    <figure>
+      <figcaption>Overview of typical <code>wdid</code> usage.</figcaption>
+      <img src="how-it-works.png" alt="diagram of program usage" width="100%" />
+    </figure>
+    <p>
+      By default, <code>wdid</code> records two type of entries:
+    </p>
+    <ol>
+      <li>reminder - <code>wdid remind</code></li>
+      <li>stand-up - <code>wdid new</code></li>
+    </ol>
+    <p>
+      Stand-up entry (#2) should be created on the day of the stand-up meeting, typically that's each working day in the morning. Reminder (#1) is created the day before, usually by the end of the working day.
+      Reminders will be automatically displayed when creating stand-up entry, this way you it's much easier to write up your stand-up because you don't have to dig deep into your memory, the program helps you with that.
+    </p>
+    <p>You don't have to use reminders if you do not wish to by <a href="#reminder-settings">turning it off</a> but it's recommended.</p>
+    <p>Example:</p>
+    <ol>
+      <li>It's monday morning - 9:00, your stand-up meeting starts at ten.</li>
+      <li>You decide to prepare the stand-up so you run <code>wdid new</code>, that way you'll be prepared for the meeting.</li>
+      <li>You are presented with the summary of what you did on previous working day - that's friday in your case. You answer the questions while cross-referencing the friday's reminder.</li>
+      <li>It's 10:00, meeting starts. You run <code>wdid log --last</code> to see the entry you created one hour ago. You communicate these facts to the team and move on with the work.</li>
+      <li>Now it's 17:00 in the afternoon and you're about to call it a day. You run <code>wdid remind</code>, you get asked questions about your day, you fill them in and stop working shortly.</li>
+      <li>Now it's tuesday morning and it's 9:00 again. You run <code>wdid new</code> again, this time seeing reminder from monday.</li>
+      <li>You answer the questions. The cycle repeats...</li>
+    </ol>
+    <h3 class="content__subtitle" id="installation">Installation</h3>
+    <h5>npm</h5>
+    <p>
+      Use <code>npm install --global wdid</code> to install <code>wdid</code> as global package that exposes <em>wdid</em> binary. Requires NodeJS environment (at least v18) to be installed.</p>
+    <h5>source</h5>
+    <p>
+      Clone repository to desired location on your system. Run <code>npm link</code> within the directory. <em>wdid</em> command should now be available to you. You need NodeJS environment (at least v18) to be installed. Code doesn't need any compilation, will run directly from source.
+    </p>
+    <h3 class="content__subtitle" id="usage">Usage</h3>
+    <p>
+      The first thing you must do right after installing <code>wdid</code> is to run <code>wdid init</code>. This command is used for bootstrapping the program such as reading the configuration file and creating the database file. If you already had <code>wdid</code> on your computer before, this command should be able to detect the existing files and use them. Configuration file is simple JSON so it is simple to back-up and restore. The database is single <code>sqlite</code> file, you can back-up and restore this file as well, or even sync it between computers if you wish so.
+    </p>
+    <h4><code>wdid</code> command</h4>
+    <dl>
+      <dt><code>--help</code></dt>
+      <dd>Display help message for global <code>wdid</code> command.</dd>
+      <dt><code>init</code></dt>
+      <dd>Initialize the program, create config file and set up saving location for the program database.</dd>
+      <dt><code>new</code></dt>
+      <dd>Records new stand-up entry. Flag <code>-a/--amend</code> will enter edit mode.</dd>
+      <dt><code>remind</code></dt>
+      <dd>Records new reminder entry. Flag <code>-a/--amend</code> will enter edit mode.</dd>
+      <dt><code>log</code></dt>
+      <dd>
+      List stand-up entries.<code>-p/--pretty</code> formats nice output for console. <code>-x/--raw</code> lists entries separated by new line in plain text. <code>-l/--last</code> returns last entry (for each type specified). <code>-r/--include-reminders</code> will include reminder entries in the output. <code>-R/--only-reminders</code> inverts the command and only lists reminders.
+      </dd>
+    </dl>
+    <h4><code>wdid-notify</code> command</h4>
+    <dl>
+      <dt><code>standup</code></dt>
+      <dd>Trigger notification telling you to record stand-up entry.</dd>
+      <dt><code>remind</code></dt>
+      <dd>Trigger notification telling you to record remind entry.</dd>
+    </dl>
+    <h3 class="content__subtitle" id="customization">Customization</h3>
+    <p>
+      <code>wdid init</code> can create or read existing configuration file, typically named <code>config.json</code>. The program uses standardized XDG paths so you should be able to find the configuration in appropriate folder typical for your operating system.
+    </p>
+    <p>
+      You can create alternative config file and use environment variable <code>WDID_CONFIG_FILE_PATH</code> to point the program to that specific file.
+    </p>
+    <p>
+      You don't have to change anything in this file if you don't want. You can change path to database file or whether you want to use reminders or not. All of these settings can be modified when running <code>wdid init</code> command.
+    </p>
+    <p id="reminder-settings">
+      <code>wdid init</code> will ask you whether you want to use stand-up reminders. Alternatively you can change this setting in the configuration file. When you set it to false, the application will never display reminders when creating new stand-up. This setting is for those people who want to use <code>wdid</code> in more simple manner, simply as only a tool for pre-recording their stand-ups.
+    </p>
+    <h3 class="content__subtitle" id="notifications">Notifications</h3>
+    <p>
+      The program itself cannot set up desktop notifications for you. You should use <code>cron</code> or some different type of scheduling program to trigger notification helper program. This helper program can be invoked with <code>wdid-notify</code> command.
+    </p>
+    <p>
+      When you initialize program with <code>wdid init</code> command, you will get example <code>cron</code> configuration printed to the console that can help you get started.
+    </p>
+    <hr>
+    <section class="authors">
+      <p><strong>2022</strong></p>
+      <p>Author: <em><a href="https://synacek.org">Ondřej Synáček</a></em></p>
+    </section>
   </main>
 </body>
 </html>

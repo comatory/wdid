@@ -5,7 +5,7 @@
 **W**hat **did** **I** **d**o is a command line tool for preparing and
 recording your daily SCRUM stand-ups.
 
-See [website](https://comatory.github.io/wdid/) for more detailed explanation
+### [https://comatory.github.io/wdid](https://comatory.github.io/wdid/)
 
 <img src="docs/wdid.gif" width="481" alt="demonstrating wdid on command line" />
 
