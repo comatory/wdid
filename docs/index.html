@@ -52,7 +52,7 @@
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
-      max-width: 720px;
+      max-width: 800px;
       margin: 0 auto;
     }
 
@@ -66,13 +66,20 @@
       font-size: 1.8rem;
     }
 
-    .content_nav {
+    .content-nav {
+      font-size: 0.9rem;
+      font-weight: 600;
       width: 100%;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-evenly;
       list-style-type: none;
       padding: 0;
+    }
+
+    .content-nav__item {
+      padding: 2px 6px;
     }
   </style>
 </head>
@@ -96,20 +103,22 @@
       It should be used within workplace where daily SCRUM stand-ups are used. This tool can generate such a stand-up and much more.
     </p>
     <nav>
-      <ul class="content_nav">
-        <li><a href="#why">Why?</a></li>
+      <ul class="content-nav">
+        <li class="content-nav__item"><a href="#why">Why?</a></li>
         <li role="presentation">•</li>
-        <li><a href="#how-does-it-work">How does it work?</a></li>
+        <li class="content-nav__item"><a href="#how-does-it-work">How does it work?</a></li>
         <li role="presentation">•</li>
-        <li><a href="#installation">Installation</a></li>
+        <li class="content-nav__item"><a href="#installation">Installation</a></li>
         <li role="presentation">•</li>
-        <li><a href="#usage">Usage</a></li>
+        <li class="content-nav__item"><a href="#usage">Usage</a></li>
         <li role="presentation">•</li>
-        <li><a href="#customization">Customization</a></li>
+        <li class="content-nav__item"><a href="#customization">Customization</a></li>
         <li role="presentation">•</li>
-        <li><a href="#notifications">Notifications</a></li>
+        <li class="content-nav__item"><a href="#notifications">Notifications</a></li>
         <li role="presentation">•</li>
-        <li><a href="https://github.com/comatory/wdid/issues">Report issues</a></li>
+        <li class="content-nav__item"><a href="https://github.com/comatory/wdid">Github</a></li>
+        <li role="presentation">•</li>
+        <li class="content-nav__item"><a href="https://github.com/comatory/wdid/issues">Report issues</a></li>
       </ul>
     </nav>
     <hr />
