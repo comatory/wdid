@@ -81,6 +81,13 @@
     .content-nav__item {
       padding: 2px 6px;
     }
+
+    .authors {
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   </style>
 </head>
 <body>
@@ -199,6 +206,9 @@
       <code>wdid init</code> can create or read existing configuration file, typically named <code>config.json</code>. The program uses standardized XDG paths so you should be able to find the configuration in appropriate folder typical for your operating system.
     </p>
     <p>
+      You can create alternative config file and use environment variable <code>WDID_CONFIG_FILE_PATH</code> to point the program to that specific file.
+    </p>
+    <p>
       You don't have to change anything in this file if you don't want. You can change path to database file or whether you want to use reminders or not. All of these settings can be modified when running <code>wdid init</code> command.
     </p>
     <p id="reminder-settings">
@@ -211,6 +221,11 @@
     <p>
       When you initialize program with <code>wdid init</code> command, you will get example <code>cron</code> configuration printed to the console that can help you get started.
     </p>
+    <hr>
+    <section class="authors">
+      <p><strong>2022</strong></p>
+      <p>Author: <em><a href="https://synacek.org">Ondřej Synáček</a></em></p>
+    </section>
   </main>
 </body>
 </html>
