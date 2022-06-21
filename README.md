@@ -26,13 +26,13 @@ The entries are stored in sqlite database file.
 
 ### NPM
 
-`npm i -G wdid`
+`npm i -g wdid`
 
 ### Git repository
 
 1. Clone this repository
 2. CD into the cloned folder
-3. `npm install --global .` or `npm link`
+3. `npm link`
 
 ### brew
 
@@ -43,7 +43,9 @@ _TBD_
 `wdid init` is required before using the tool. It sets you up with
 configuration file and database file.
 
-_TBD_
+You can re-run this command anytime. It will also detect any existing
+configuration and database file, so you can move these between machines
+and it should work fine.
 
 ## How does it work?
 
